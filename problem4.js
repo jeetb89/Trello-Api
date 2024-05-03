@@ -20,7 +20,7 @@ function getCards(listId) {
       .catch((error) => {
         console.log('Error getting card info:',error.message);
 
-         throw error;
+        
       });
 }
 
