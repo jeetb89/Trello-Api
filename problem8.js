@@ -33,11 +33,14 @@ function deleteListsSequentially(listIds, index) {
       return response.json();
     })
     .then(() => deleteListsSequentially(listIds, index + 1))
-    .catch((error) => console.error("Error:", error));
+    .catch((error) => {
+      console.log('Error deleting lists sequentially:',error.message);
+        throw error
+    });
 }
 
 function deleteAllLists(boardName) {
-  fetchAPI("/members/me/boards", "GET")
+   return fetchAPI("/members/me/boards", "GET")
     .then((response) => {
       if (!response.ok) {
         throw new Error("Failed to fetch boards");
@@ -63,7 +66,10 @@ function deleteAllLists(boardName) {
       const listIds = lists.map((list) => list.id);
       deleteListsSequentially(listIds, 0);
     })
-    .catch((error) => console.error("Error:", error));
+    .catch((error) => {
+      console.log('Error deleting all lists',error.message);
+      throw error
+    });
 }
 
-deleteAllLists("tempboard");
+module.exports= deleteAllLists;
