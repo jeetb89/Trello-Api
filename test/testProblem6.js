@@ -3,5 +3,5 @@ const createBoardAndLists=require('../problem6.js')
 
 createBoardAndLists(boardName)
 .catch((error)=>{
-    console.log(error)
+    console.log("Error Found :",error.message)
 })

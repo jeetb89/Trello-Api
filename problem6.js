@@ -12,10 +12,9 @@ function createfetch(path, tempMethod, body) {
   });
 }
 
-function createBoardAndLists() {
-  const boardName = "tempboard";
-
-  createfetch(
+function createBoardAndLists(boardName) {
+  
+  return   createfetch(
     `https://api.trello.com/1/boards/?name=${boardName}&key=${keyValue}&token=${tokenValue}`,
     "POST"
   )
@@ -50,7 +49,9 @@ function createBoardAndLists() {
             return lists;
           })
           .catch((error) => {
-            console.error("Error creating list:", error);
+            console.log('Error creating board and lists',error.message);
+
+            throw error;
           });
 
         listPromises.push(listPromise);
@@ -77,8 +78,9 @@ function createBoardAndLists() {
       console.log("Cards Created");
     })
     .catch((error) => {
-      console.error("Error:", error);
+      console.log(error.message);
+       throw error;
     });
 }
 
-createBoardAndLists();
+module.exports=createBoardAndLists;
