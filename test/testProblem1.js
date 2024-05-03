@@ -7,5 +7,5 @@ const getBoard= require('../problem1.js')
     console.log(boardData);
   })
   .catch((error) => {
-    console.error("Error fetching board data:", error);
+    console.error("Error occurred:", error.message);
   });
