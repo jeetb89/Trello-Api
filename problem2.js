@@ -28,14 +28,9 @@ function createBoard(boardName) {
       return response.json();
     })
     .catch((error) => {
-      console.log("Error Found :", error);
+        console.log('Error creating board:',error.message);
+        throw error;
     });
 }
 
-createBoard("newboard")
-  .then((response) => {
-    console.log(response);
-  })
-  .catch((error) => {
-    console.log("Error Found :", error);
-  });
+module.exports= createBoard;
