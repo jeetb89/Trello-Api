@@ -55,7 +55,7 @@ function updateCheckItems(cardId) {
     })
     .catch((error) => {
       console.log('Error updating check items :',error.message);
-      throw error;
+      
     });
 }
 
