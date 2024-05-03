@@ -8,5 +8,5 @@ getLists(boardId)
     console.log(boardData);
   })
   .catch((error) => {
-    console.error("Error fetching board data:", error);
+    console.error("Error fetching board data:", error.message);
   });
