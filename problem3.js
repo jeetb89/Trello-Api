@@ -28,7 +28,7 @@ function getLists(boardId) {
       })
       .catch((error) => {
         console.log('Error getting list:',error.message);
-        throw error;
+        
       });
 }
 
