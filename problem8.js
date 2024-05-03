@@ -35,7 +35,7 @@ function deleteListsSequentially(listIds, index) {
     .then(() => deleteListsSequentially(listIds, index + 1))
     .catch((error) => {
       console.log('Error deleting lists sequentially:',error.message);
-        throw error
+        
     });
 }
 
@@ -68,7 +68,7 @@ function deleteAllLists(boardName) {
     })
     .catch((error) => {
       console.log('Error deleting all lists',error.message);
-      throw error
+    
     });
 }
 
