@@ -52,8 +52,6 @@ function updateCheckItemsSequentially(cardId) {
     })
     .catch((error) => {
       console.log('Error updating checkitems sequentially',error.message);
-
-      throw error;
     });
 }
 
@@ -71,7 +69,7 @@ function updateCheckItem(cardId, checkItemId) {
     return response.json();
   }).catch((error) => {
     console.log('Error updating checkitems:',error.message);
-    throw error;
+    
  });
 }
 
