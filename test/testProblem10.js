@@ -4,5 +4,5 @@ const updateCheckItemsSequentially=require('../problem10.js')
 
 updateCheckItemsSequentially(cardid)
 .catch((error)=>{
-    console.log(error)
+    console.log("Error Found :",error.message);
 })
