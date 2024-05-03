@@ -29,7 +29,7 @@ function createBoard(boardName) {
     })
     .catch((error) => {
         console.log('Error creating board:',error.message);
-        throw error;
+        
     });
 }
 
