@@ -18,5 +18,5 @@ getAllCards(boardId)
   return res;
 })
 .catch((error) => {
-  console.log(error);
+  console.log("Error Found :",error.message);
 });
