@@ -13,7 +13,7 @@ function deletefetch(path, tempMethod, body) {
 }
 
 function deleteList(boardName) {
-  deletefetch(
+  return  deletefetch(
     `https://api.trello.com/1/members/me/boards?key=${keyValue}&token=${tokenValue}`,
     "GET"
   )
@@ -63,8 +63,11 @@ function deleteList(boardName) {
       console.log("Lists closed:", results);
     })
     .catch((error) => {
-      console.error("Error:", error);
+      console.log('Error deleting list:',error.message);
+ 
+      throw error;
     });
 }
 
-deleteList("tempboard");
+
+module.exports=deleteList
