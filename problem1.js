@@ -19,7 +19,7 @@ function getBoard(boardId) {
       })
       .catch((error) => {
         console.error("Error fetching board data:", error.message);
-        throw error;
+        
       });
 }
 
