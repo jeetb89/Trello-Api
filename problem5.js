@@ -21,7 +21,7 @@ function getAllCards(boardId) {
       .catch((error) => {
         console.log('Error creating cards info',error.message);
 
-        throw error;
+       
       });
   }
 
