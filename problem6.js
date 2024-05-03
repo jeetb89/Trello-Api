@@ -50,8 +50,6 @@ function createBoardAndLists(boardName) {
           })
           .catch((error) => {
             console.log('Error creating board and lists',error.message);
-
-            throw error;
           });
 
         listPromises.push(listPromise);
