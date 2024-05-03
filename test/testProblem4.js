@@ -7,5 +7,5 @@ getCards(listId)
     console.log(data);
   })
   .catch((error) => {
-    console.log(error);
+    console.log("Error Found :",error.message);
   });
