@@ -65,7 +65,7 @@ function deleteList(boardName) {
     .catch((error) => {
       console.log('Error deleting list:',error.message);
  
-      throw error;
+    
     });
 }
 
